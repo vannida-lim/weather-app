@@ -1,7 +1,7 @@
 <h1 align='center'><b>Weather 🌤</b></h1>  
 <p align='center'>
-A <code>Mode.js</code>, <code>Express</code> and <code>JavaScript</code> web app aimed to provide
-a convenient way of searching for the weather.
+A <code>Node.js</code>, <code>Express</code> and <code>JavaScript</code> web app aimed to provide
+a convenient way to search for the weather.
 </p>
 
 <p align="center">
