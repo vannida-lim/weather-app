@@ -26,6 +26,7 @@ app.use(express.static(publicDirectoryPath))
 if (process.env.NODE_ENV === 'production') {
 	app.use(express.static(publicDirectoryPath))
 }
+console.log(process.env)
 
 app.get('*', (req, res) => {
 	res.sendFile(publicDirectoryPath)
@@ -39,7 +40,7 @@ app.get('', (req, res) => {
 })
 
 app.get('/about', (req, res) => {
-    res.render('About', {
+    res.render('about', {
         title: 'About Me',
         name: 'Vannida Lim',
         aboutText: 'Software Engineer based in Philly ✨'
@@ -47,7 +48,7 @@ app.get('/about', (req, res) => {
 })
 
 app.get('/help', (req, res) => {
-    res.render('Help', {
+    res.render('help', {
         helpText: 'FAQs',
         title: 'Help',
         name: 'Vannida Lim',
