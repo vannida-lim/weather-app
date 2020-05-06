@@ -26,7 +26,10 @@ app.use(express.static(publicDirectoryPath))
 if (process.env.NODE_ENV === 'production') {
 	app.use(express.static(publicDirectoryPath))
 }
-// console.log(process.env.NODE_ENV)
+
+app.get('*', (req, res) => {
+	res.sendFile(publicDirectoryPath)
+});
 
 app.get('', (req, res) => {
     res.render('index', {
@@ -94,6 +97,7 @@ app.get('*', (req, res) => {
         errorMessage: 'Page not found.'
     })
 })
+
 
 
 app.listen(port, () => {
