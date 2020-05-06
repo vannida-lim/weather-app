@@ -11,7 +11,7 @@ Lim</a>
 
 **Demo**
 ------------
--[Heroku](https://node-weather-appy-app.herokuapp.com/)
+[Heroku](https://node-weather-appy-app.herokuapp.com/)
 
 **Features**
 ------------
