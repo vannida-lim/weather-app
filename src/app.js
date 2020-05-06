@@ -8,6 +8,7 @@ const forecast = require('./utilis/forecast')
 const app = express()
 const port = process.env.PORT || 3000
 
+
 //Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
@@ -20,6 +21,12 @@ hbs.registerPartials(partialsPath)
 
 //Setup static directory to serve 
 app.use(express.static(publicDirectoryPath))
+
+//Setup dynamic directory to serve
+if (process.env.NODE_ENV === 'production') {
+	app.use(express.static(publicDirectoryPath))
+}
+// console.log(process.env.NODE_ENV)
 
 app.get('', (req, res) => {
     res.render('index', {
