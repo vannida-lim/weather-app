@@ -26,7 +26,6 @@ app.use(express.static(publicDirectoryPath))
 if (process.env.NODE_ENV === 'production') {
 	app.use(express.static(publicDirectoryPath))
 }
-console.log(process.env)
 
 app.get('*', (req, res) => {
 	res.sendFile(publicDirectoryPath)
@@ -53,7 +52,7 @@ app.get('/help', (req, res) => {
         title: 'Help',
         name: 'Vannida Lim',
         qa1: 'What APIs were used? Weatherstack and Mapbox',
-        qa2: 'What tech stack was used? Node.js, Express, and npm hbs' 
+        qa2: 'What tech stack was used? Node.js, Express.js, and npm hbs' 
         
     })
 })
@@ -75,7 +74,8 @@ app.get('/weather', (req, res) => {
                 return res.send({ error })
             }
             res.send({
-                forecast: forecastData,
+                forecast: forecastData.forecast,
+                weatherIcon: forecastData.weatherIcon,
                 location: location,
                 address: address
             })

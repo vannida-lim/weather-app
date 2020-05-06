@@ -87,3 +87,8 @@ button:hover {
 li {
     padding: 8px;
 }
+
+#weather-icon {
+    padding: 8px;
+    border-radius: 100px;
+}
